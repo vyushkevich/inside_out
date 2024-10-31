@@ -1,5 +1,7 @@
 package dev.inside_out;
 
+import java.util.Scanner;
+
 /**
  * Hello world!
  */
@@ -13,7 +15,10 @@ public final class App {
      */
     public static void main(String[] args) {
         ProgramController controller = new ProgramController();
-
-        controller.startProgram();
+        Scanner scanner = new Scanner(System.in);
+       // controller.startProgram();
+        controller.CreateMoment(scanner);
     }
+
+    
 }

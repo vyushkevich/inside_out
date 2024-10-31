@@ -2,6 +2,7 @@ package dev.inside_out;
 import java.time.LocalDate;
 
 public class Moment {
+    private Integer id;  
     private String titleOfMoment;
     private LocalDate dateOfMoment;
     private String description;
@@ -13,6 +14,7 @@ public class Moment {
         this.description = description;
         this.emotion = emotion;
     }
+   
 
     public String getTitleOfMoment() {
         return titleOfMoment;
@@ -47,7 +49,14 @@ public class Moment {
     }
    
     
-
+    // Método toString para mostrar el contenido
+    @Override
+    public String toString() {
+        return "Title: " + titleOfMoment + "\n" +
+                "Date: " + dateOfMoment + "\n" +
+                "Description: " + description + "\n" +
+                "Emotion: " + emotion.getNameOfEmotion();
+    }
     
     
 }
