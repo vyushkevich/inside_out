@@ -1,6 +1,7 @@
 package dev.inside_out;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class ProgramController {
     private List<Emotion> emotions = new ArrayList<>();
@@ -24,6 +25,33 @@ public class ProgramController {
         emotions.add(new Emotion(10, "Nostalgia"));
     }
 
+    public void startProgram() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("My diario:\n1. Añadir momento\n2. Ver todos los momentos disponibles\n3. Eliminar un momento\n4. Filtrar los momentos\n5. Salir");
+        System.out.print("Seleccione una opción:");
+        int choice = scanner.nextInt();
+
+        switch (choice) {
+            case 1:
+                System.out.println("Here will be another menu");
+                break;
+            case 2:
+                System.out.println("Here will be another menu");
+                break;
+            case 3:
+                System.out.println("Here will be another menu");
+                break;
+            case 4:
+                System.out.println("Here will be another menu");
+                break;
+            case 5:
+                System.out.println("Here will be another menu");
+                break;
+            default:
+                System.out.println("Wrong choice!");
+                break;
+        }
+    }
 
     public List<Emotion> getEmotions() {
         return emotions;
