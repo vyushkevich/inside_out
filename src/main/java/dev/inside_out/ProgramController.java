@@ -1,4 +1,5 @@
 package dev.inside_out;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -9,10 +10,8 @@ public class ProgramController {
     private List<Emotion> emotions = new ArrayList<>();
     private List<Moment> moments = new ArrayList<>();
 
-    public ProgramController(){
+    public ProgramController() {
         createEmotions();
-        
-
 
     }
 
@@ -31,34 +30,40 @@ public class ProgramController {
 
     public void startProgram() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("My diario:\n1. Añadir momento\n2. Ver todos los momentos disponibles\n3. Eliminar un momento\n4. Filtrar los momentos\n5. Salir");
-        System.out.print("Seleccione una opción:");
-        int choice = scanner.nextInt();
+        boolean programRuning = true;
 
-        switch (choice) {
-            case 1:
-                createMoment(scanner);
-                break;
-            case 2:
-                showAllMoments();
-                break;
-            case 3:
-                System.out.println("Here will be another menu");
-                break;
-            case 4:
-                System.out.println("Here will be another menu");
-                break;
-            case 5:
-                System.out.println("Here will be another menu");
-                break;
-            default:
-                System.out.println("Wrong choice!");
-                break;
+        while (programRuning) {
+            System.out.println("My diario:\n1. Añadir momento\n2. Ver todos los momentos disponibles\n3. Eliminar un momento\n4. Filtrar los momentos\n5. Salir");
+            System.out.print("Seleccione una opción:");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (choice) {
+                case 1:
+                    createMoment(scanner);
+                    break;
+                case 2:
+                    showAllMoments();
+                    break;
+                case 3:
+                    System.out.println("Here will be another menu");
+                    break;
+                case 4:
+                    System.out.println("Here will be another menu");
+                    break;
+                case 5:
+                    System.out.println("До зустрічі!");
+                    programRuning = false;
+                    break;
+                default:
+                    System.out.println("Wrong choice!");
+                    break;
+            }
         }
     }
 
-    void createMoment(Scanner scanner){
-                
+    void createMoment(Scanner scanner) {
+
         System.out.print("Ingrese título del momento: ");
         String title = scanner.nextLine();
 
@@ -67,13 +72,12 @@ public class ProgramController {
 
         LocalDate date = LocalDate.parse(dateString, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
-
         System.out.print("Ingrese descripción del momento: ");
         String description = scanner.nextLine();
 
         System.out.print("Ingrese la emoción (1-10): \n");
-        for (int index = 0; index < emotions.size(); index ++){
-            System.out.println((index+1) + ". " + emotions.get(index).getNameOfEmotion());
+        for (int index = 0; index < emotions.size(); index++) {
+            System.out.println((index + 1) + ". " + emotions.get(index).getNameOfEmotion());
 
         }
         System.out.print("Seleccione una opción:");
@@ -85,20 +89,18 @@ public class ProgramController {
         System.out.print(moment);
         System.out.print("Momento añadido correctamente \n");
 
-
     }
 
-    public void showAllMoments(){
+    public void showAllMoments() {
         if (moments.isEmpty()) {
             System.out.println("No hay momentos para mostrar.");
         } else {
-            for(int index = 0; index < moments.size(); index ++){
+            for (int index = 0; index < moments.size(); index++) {
                 System.out.println(moments.get(index));
             }
         }
 
     }
-
 
     public List<Emotion> getEmotions() {
         return emotions;
@@ -108,8 +110,4 @@ public class ProgramController {
         return moments;
     }
 
-    
- 
 }
-
-
