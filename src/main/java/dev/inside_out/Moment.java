@@ -52,10 +52,10 @@ public class Moment {
     
     @Override
     public String toString() {
-        return "Title: " + titleOfMoment + "\n" +
+        return "Datos del momento \n"+ "Title: " + titleOfMoment + "\n" +
                 "Date: " + dateOfMoment + "\n" +
                 "Description: " + description + "\n" +
-                "Emotion: " + emotion.getNameOfEmotion();
+                "Emotion: " + emotion.getNameOfEmotion()+"\n";
     }
     
     

@@ -40,7 +40,7 @@ public class ProgramController {
                 createMoment(scanner);
                 break;
             case 2:
-                System.out.println("Here will be another menu");
+                showAllMoments();
                 break;
             case 3:
                 System.out.println("Here will be another menu");
@@ -58,20 +58,20 @@ public class ProgramController {
     }
 
     void createMoment(Scanner scanner){
-        
+                
         System.out.print("Ingrese título del momento: ");
         String title = scanner.nextLine();
 
         System.out.print("Ingrese fecha del momento (dd/mm/yyyy): ");
         String dateString = scanner.nextLine();
 
-        LocalDate date = LocalDate.parse(dateString, java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        LocalDate date = LocalDate.parse(dateString, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
 
         System.out.print("Ingrese descripción del momento: ");
         String description = scanner.nextLine();
 
-        System.out.print("Ingrese la emoción (1-10): ");
+        System.out.print("Ingrese la emoción (1-10): \n");
         for (int index = 0; index < emotions.size(); index ++){
             System.out.println((index+1) + ". " + emotions.get(index).getNameOfEmotion());
 
@@ -83,8 +83,19 @@ public class ProgramController {
         Moment moment = new Moment(title, date, description, emotion);
         moments.add(moment);
         System.out.print(moment);
-        System.out.print("Momento añadido correctamente");
+        System.out.print("Momento añadido correctamente \n");
 
+
+    }
+
+    public void showAllMoments(){
+        if (moments.isEmpty()) {
+            System.out.println("No hay momentos para mostrar.");
+        } else {
+            for(int index = 0; index < moments.size(); index ++){
+                System.out.println(moments.get(index));
+            }
+        }
 
     }
 
