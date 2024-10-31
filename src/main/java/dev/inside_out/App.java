@@ -17,7 +17,7 @@ public final class App {
         ProgramController controller = new ProgramController();
         Scanner scanner = new Scanner(System.in);
        // controller.startProgram();
-        controller.CreateMoment(scanner);
+        controller.createMoment(scanner);
     }
 
     

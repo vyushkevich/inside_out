@@ -49,7 +49,7 @@ public class Moment {
     }
    
     
-    // Método toString para mostrar el contenido
+    
     @Override
     public String toString() {
         return "Title: " + titleOfMoment + "\n" +

@@ -37,7 +37,7 @@ public class ProgramController {
 
         switch (choice) {
             case 1:
-                CreateMoment(scanner);
+                createMoment(scanner);
                 break;
             case 2:
                 System.out.println("Here will be another menu");
@@ -57,7 +57,7 @@ public class ProgramController {
         }
     }
 
-    void CreateMoment(Scanner scanner){
+    void createMoment(Scanner scanner){
         
         System.out.print("Ingrese título del momento: ");
         String title = scanner.nextLine();
