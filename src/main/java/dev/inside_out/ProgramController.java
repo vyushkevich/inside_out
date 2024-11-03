@@ -49,14 +49,14 @@ public class ProgramController {
                     System.out.println("Here will be another menu");
                     break;
                 case 4:
-                    System.out.println("Here will be another menu");
+                    sortByMonth(scanner);
                     break;
                 case 5:
-                    System.out.println("До зустрічі!");
+                    System.out.println("Hasta la próxima!!!");
                     programRuning = false;
                     break;
                 default:
-                    System.out.println("Wrong choice!");
+                    System.out.println("No es la elección correcta!");
                     break;
             }
         }
@@ -99,6 +99,23 @@ public class ProgramController {
                 System.out.println(moments.get(index));
             }
         }
+
+    }
+
+    private void sortByMonth(Scanner scanner) {
+        System.out.println("Ingrese el mes (1-12): ");
+        Integer month = scanner.nextInt();
+        scanner.nextLine();
+
+        List<Moment> sortedMoments = moments.stream().filter(moment -> moment.getDateOfMoment().getMonthValue() == month).toList();
+
+        if (sortedMoments.isEmpty()){
+            System.out.println("No se encontraron momentos para la fecha seleccionada.");
+        } else {
+            System.out.println("Lista de momentos por mes " + month + ":");
+            sortedMoments.forEach(System.out::println);
+        }
+
 
     }
 
