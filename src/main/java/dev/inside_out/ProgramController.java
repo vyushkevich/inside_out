@@ -49,7 +49,7 @@ public class ProgramController {
                     System.out.println("Eliminar Momento");
                     break;
                 case 4:
-                    sortByMonth(scanner);
+                    filterOfMoments(scanner);
                     break;
                 case 5:
                     System.out.println("Hasta la próxima!!!");
@@ -102,6 +102,27 @@ public class ProgramController {
 
     }
 
+    private void filterOfMoments(Scanner scanner){
+        System.out.println("Filtrar por:\n1. Emoción\n2. Fecha");
+        System.out.print("Ingrese una opción:");
+        Integer option = scanner.nextInt();
+        scanner.nextLine();
+
+        switch (option) {
+            case 1:
+                sortByEmotion(scanner);
+                break;
+            case 2:                
+                sortByMonth(scanner);
+                break;
+            default:
+                System.out.println("No es la elección correcta!");
+                break; 
+            
+        }
+
+    }
+
     private void sortByMonth(Scanner scanner) {
         System.out.println("Ingrese el mes (1-12): ");
         Integer month = scanner.nextInt();
@@ -115,6 +136,24 @@ public class ProgramController {
             System.out.println("Lista de momentos por mes " + month + ":");
             sortedMoments.forEach(System.out::println);
         }
+    }
+
+    private void sortByEmotion(Scanner scanner) {
+        System.out.println("Ingrese la emotion (1-10): ");
+        Integer emotionId = scanner.nextInt();
+        scanner.nextLine();
+
+        List<Moment> sortedMoments = moments.stream()
+        .filter(moment -> moment.getEmotion().getId()== emotionId)
+        .toList();
+
+        if (sortedMoments.isEmpty()){
+            System.out.println("No se encontraron momentos para.");
+        } else {
+            System.out.println("Lista de momentos por emoció: " + emotions.get(emotionId-1).getNameOfEmotion());
+            sortedMoments.forEach(System.out::println);
+        }
+       
     }
 
     public List<Emotion> getEmotions() {
