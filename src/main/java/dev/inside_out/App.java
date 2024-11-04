@@ -14,10 +14,9 @@ public final class App {
      * @param args The arguments of the program.
      */
     public static void main(String[] args) {
-        ProgramController controller = new ProgramController();
-        Scanner scanner = new Scanner(System.in);
+        ProgramController controller = new ProgramController();        
         controller.startProgram();
-        //controller.createMoment(scanner);
+       
     }
 
     
