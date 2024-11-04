@@ -46,7 +46,7 @@ public class ProgramController {
                     showAllMoments();
                     break;
                 case 3:
-                    System.out.println("Here will be another menu");
+                    System.out.println("Eliminar Momento");
                     break;
                 case 4:
                     sortByMonth(scanner);
