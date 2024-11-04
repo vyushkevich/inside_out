@@ -115,8 +115,6 @@ public class ProgramController {
             System.out.println("Lista de momentos por mes " + month + ":");
             sortedMoments.forEach(System.out::println);
         }
-
-
     }
 
     public List<Emotion> getEmotions() {
