@@ -1,7 +1,5 @@
 package dev.inside_out;
 
-import java.util.Scanner;
-
 /**
  * Hello world!
  */
@@ -17,7 +15,5 @@ public final class App {
         ProgramController controller = new ProgramController();        
         controller.startProgram();
        
-    }
-
-    
+    }  
 }
