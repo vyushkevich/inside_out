@@ -2,8 +2,8 @@ package dev.inside_out;
 import java.time.LocalDate;
 
 public class Moment {
-    private Integer idOfMoment;  
-    private static Integer idCounter = 1; 
+    private int idOfMoment;  
+    private static int idCounter = 1; 
     private String titleOfMoment;
     private LocalDate dateOfMoment;
     private String description;

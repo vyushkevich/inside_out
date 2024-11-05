@@ -11,21 +11,8 @@ public class ProgramController {
     private List<Moment> moments = new ArrayList<>();
 
     public ProgramController() {
-        createEmotions();
+        this.emotions = Emotion.createEmotions();
 
-    }
-
-    private void createEmotions() {
-        emotions.add(new Emotion(1, "Alegría"));
-        emotions.add(new Emotion(2, "Tristeza"));
-        emotions.add(new Emotion(3, "Ira"));
-        emotions.add(new Emotion(4, "Asco"));
-        emotions.add(new Emotion(5, "Miedo"));
-        emotions.add(new Emotion(6, "Ansiedad"));
-        emotions.add(new Emotion(7, "Envidia"));
-        emotions.add(new Emotion(8, "Vergüenza"));
-        emotions.add(new Emotion(9, "Aburrimiento"));
-        emotions.add(new Emotion(10, "Nostalgia"));
     }
 
     public void startProgram() {
@@ -33,7 +20,15 @@ public class ProgramController {
         boolean programRuning = true;
 
         while (programRuning) {
-            System.out.println("My diario:\n1. Añadir momento\n2. Ver todos los momentos disponibles\n3. Eliminar un momento\n4. Filtrar los momentos\n5. Salir");
+            String menu = """
+                    My diario:
+                    1. Añadir momento.
+                    2. Ver todos los momentos disponibles.
+                    3. Eliminar un momento.
+                    4. Filtrar los momentos.
+                    5. Salir
+                    """;
+            System.out.println(menu);
             System.out.print("Seleccione una opción:");
             int choice = scanner.nextInt();
             scanner.nextLine();
@@ -105,7 +100,7 @@ public class ProgramController {
     private void filterOfMoments(Scanner scanner){
         System.out.println("Filtrar por:\n1. Emoción\n2. Fecha");
         System.out.print("Ingrese una opción:");
-        Integer option = scanner.nextInt();
+        int option = scanner.nextInt();
         scanner.nextLine();
 
         switch (option) {
@@ -118,14 +113,13 @@ public class ProgramController {
             default:
                 System.out.println("No es la elección correcta!");
                 break; 
-            
         }
 
     }
 
     private void sortByMonth(Scanner scanner) {
         System.out.println("Ingrese el mes (1-12): ");
-        Integer month = scanner.nextInt();
+        int month = scanner.nextInt();
         scanner.nextLine();
 
         List<Moment> sortedMoments = moments.stream().filter(moment -> moment.getDateOfMoment().getMonthValue() == month).toList();
@@ -140,7 +134,7 @@ public class ProgramController {
 
     private void sortByEmotion(Scanner scanner) {
         System.out.println("Ingrese la emotion (1-10): ");
-        Integer emotionId = scanner.nextInt();
+        int emotionId = scanner.nextInt();
         scanner.nextLine();
 
         List<Moment> sortedMoments = moments.stream()
@@ -158,7 +152,7 @@ public class ProgramController {
 
     private void deleteMoment(Scanner scanner) {
         System.out.println("Ingrese el id del momento que desea eliminar: ");
-        Integer id = scanner.nextInt();
+        int id = scanner.nextInt();
         scanner.nextLine();
 
         for (Moment moment : moments) {
