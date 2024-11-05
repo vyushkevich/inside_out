@@ -46,7 +46,7 @@ public class ProgramController {
                     showAllMoments();
                     break;
                 case 3:
-                    System.out.println("Eliminar Momento");
+                    deleteMoment(scanner);
                     break;
                 case 4:
                     filterOfMoments(scanner);
@@ -154,6 +154,21 @@ public class ProgramController {
             sortedMoments.forEach(System.out::println);
         }
        
+    }
+
+    private void deleteMoment(Scanner scanner) {
+        System.out.println("Ingrese el id del momento que desea eliminar: ");
+        Integer id = scanner.nextInt();
+        scanner.nextLine();
+
+        for (Moment moment : moments) {
+            if (moment.getIdOfMoment() == id) {
+                moments.remove(moment);
+                System.out.println("Momento eliminado correctamente.");
+                return;
+            }
+        }
+        System.out.println("No se encontró un momento con el id ingresado.");
     }
 
     public List<Emotion> getEmotions() {
