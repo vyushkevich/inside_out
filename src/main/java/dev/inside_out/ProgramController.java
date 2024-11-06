@@ -20,15 +20,7 @@ public class ProgramController {
         boolean programRuning = true;
 
         while (programRuning) {
-            String menu = """
-                    My diario:
-                    1. Añadir momento.
-                    2. Ver todos los momentos disponibles.
-                    3. Eliminar un momento.
-                    4. Filtrar los momentos.
-                    5. Salir
-                    """;
-            System.out.println(menu);
+            System.out.println("My diario:\n1. Añadir momento\n2. Ver todos los momentos disponibles\n3. Eliminar un momento\n4. Filtrar los momentos\n5. Salir");
             System.out.print("Seleccione una opción:");
             int choice = scanner.nextInt();
             scanner.nextLine();
@@ -57,7 +49,7 @@ public class ProgramController {
         }
     }
 
-    void createMoment(Scanner scanner) {
+    public void createMoment(Scanner scanner) {
 
         System.out.print("Ingrese título del momento: ");
         String title = scanner.nextLine();
@@ -97,7 +89,7 @@ public class ProgramController {
 
     }
 
-    private void filterOfMoments(Scanner scanner){
+    public void filterOfMoments(Scanner scanner){
         System.out.println("Filtrar por:\n1. Emoción\n2. Fecha");
         System.out.print("Ingrese una opción:");
         int option = scanner.nextInt();
@@ -132,7 +124,7 @@ public class ProgramController {
         }
     }
 
-    private void sortByEmotion(Scanner scanner) {
+    public void sortByEmotion(Scanner scanner) {
         System.out.println("Ingrese la emotion (1-10): ");
         int emotionId = scanner.nextInt();
         scanner.nextLine();
@@ -150,7 +142,7 @@ public class ProgramController {
        
     }
 
-    private void deleteMoment(Scanner scanner) {
+    public void deleteMoment(Scanner scanner) {
         System.out.println("Ingrese el id del momento que desea eliminar: ");
         int id = scanner.nextInt();
         scanner.nextLine();
