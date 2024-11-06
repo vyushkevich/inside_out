@@ -24,18 +24,20 @@ public class ProgramControllerTest {
         Scanner scanner = new Scanner(new ByteArrayInputStream(simulatedInput.getBytes()));
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PrintStream originalOut = System.out;
         System.setOut(new PrintStream(outputStream));
 
         controller.sortByMonth(scanner);
 
         String output = outputStream.toString();
+        
         assertTrue(output.contains("Lista de momentos por mes 5"));
         assertTrue(output.contains("Birthday"));
         assertTrue(output.contains("Concert"));
         assertFalse(output.contains("Vacation"));
         assertFalse(output.contains("Workshop"));
 
-        System.setOut(System.out);
+        System.setOut(originalOut);
     }
 
     @Test
@@ -52,6 +54,7 @@ public class ProgramControllerTest {
         Scanner scanner = new Scanner(new ByteArrayInputStream(simulatedInput.getBytes()));
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PrintStream originalOut = System.out;
         System.setOut(new PrintStream(outputStream));
 
         controller.sortByEmotion(scanner);
@@ -63,6 +66,8 @@ public class ProgramControllerTest {
         assertTrue(output.contains("Vacation"));
         assertFalse(output.contains("Breakup"));
         assertFalse(output.contains("Argument"));
+
+        System.setOut(originalOut);
     }
 
 }
