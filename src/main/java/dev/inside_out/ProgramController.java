@@ -117,7 +117,7 @@ public class ProgramController {
 
     }
 
-    private void sortByMonth(Scanner scanner) {
+    public void sortByMonth(Scanner scanner) {
         System.out.println("Ingrese el mes (1-12): ");
         int month = scanner.nextInt();
         scanner.nextLine();
