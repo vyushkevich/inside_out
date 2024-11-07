@@ -52,7 +52,6 @@ public class ProgramControllerTest {
         controller.getMoments().add(new Moment("Concert", LocalDate.of(2023, 5, 22), "Amazing music!", controller.getEmotions().get(2)));
         controller.getMoments().add(new Moment("Workshop", LocalDate.of(2023, 7, 4), "Learned a lot", controller.getEmotions().get(3)));
         
-        
         String simulatedInput = "5\n";
         PrintStream originalOut = System.out;
         Scanner scanner = new Scanner(new ByteArrayInputStream(simulatedInput.getBytes()));
