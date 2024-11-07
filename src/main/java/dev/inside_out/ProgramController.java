@@ -12,7 +12,6 @@ public class ProgramController {
 
     public ProgramController() {
         this.emotions = Emotion.createEmotions();
-
     }
 
     public void startProgram() {
@@ -47,6 +46,7 @@ public class ProgramController {
                     break;
             }
         }
+        scanner.close();
     }
 
     public void createMoment(Scanner scanner) {
@@ -65,8 +65,8 @@ public class ProgramController {
         System.out.print("Ingrese la emoción (1-10): \n");
         for (int index = 0; index < emotions.size(); index++) {
             System.out.println((index + 1) + ". " + emotions.get(index).getNameOfEmotion());
-
         }
+        
         System.out.print("Seleccione una opción:");
         int choice = scanner.nextInt();
 
