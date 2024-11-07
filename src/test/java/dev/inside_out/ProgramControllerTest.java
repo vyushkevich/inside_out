@@ -83,4 +83,24 @@ public class ProgramControllerTest {
         System.setOut(originalOut);
     }
 
+    @Test
+    public void testDeleteMoment() {
+        ProgramController controller = new ProgramController();
+        controller.getMoments().add(new Moment("Vacation", LocalDate.of(2023, 1, 15), "Great time!", controller.getEmotions().get(0)));
+        controller.getMoments().add(new Moment("Birthday", LocalDate.of(2023, 5, 10), "Celebration", controller.getEmotions().get(1)));
+        controller.getMoments().add(new Moment("Concert", LocalDate.of(2023, 5, 22), "Amazing music!", controller.getEmotions().get(2)));
+        controller.getMoments().add(new Moment("Workshop", LocalDate.of(2023, 7, 4), "Learned a lot", controller.getEmotions().get(3)));
+        
+        String simulatedInput = "2\n";
+        Scanner scanner = new Scanner(new ByteArrayInputStream(simulatedInput.getBytes()));
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PrintStream originalOut = System.out;
+        System.setOut(new PrintStream(outputStream));
+
+        controller.deleteMoment(scanner);
+
+        assertEquals(3, controller.getMoments().size());
+        System.setOut(originalOut);
+    }
 }
