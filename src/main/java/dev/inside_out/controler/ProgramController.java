@@ -1,4 +1,4 @@
-package dev.inside_out;
+package dev.inside_out.controler;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
