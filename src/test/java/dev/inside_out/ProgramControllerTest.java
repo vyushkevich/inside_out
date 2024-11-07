@@ -5,10 +5,32 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.io.InputStream;
 import java.time.LocalDate;
 import java.util.Scanner;
 import org.junit.jupiter.api.Test;
 public class ProgramControllerTest {
+
+    @Test
+    public void testStartProgram() {
+        String simulatedInput = "1\nMy Test Moment\n15/01/2023\nThis is a test description.\n1\n5\n";
+
+        PrintStream originalOut = System.out;
+        InputStream originalIn = System.in;
+
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        ProgramController controller = new ProgramController();
+        controller.startProgram();
+
+        assertEquals(1, controller.getMoments().size());
+        
+        System.setOut(originalOut);
+        System.setIn(originalIn);  
+    }
+
     @Test
     public void testCreateMoment() {
         String simulatedInput = "My birthday\n" + "15/01/2023\n" + "I am happy.\n" + "1\n";
