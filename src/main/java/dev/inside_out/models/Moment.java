@@ -1,4 +1,4 @@
-package dev.inside_out;
+package dev.inside_out.models;
 import java.time.LocalDate;
 
 public class Moment {

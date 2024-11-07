@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import dev.inside_out.models.Emotion;
+import dev.inside_out.models.Moment;
+
 public class ProgramController {
     private List<Emotion> emotions = new ArrayList<>();
     private List<Moment> moments = new ArrayList<>();
