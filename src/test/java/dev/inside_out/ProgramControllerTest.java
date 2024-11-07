@@ -1,5 +1,6 @@
 package dev.inside_out;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -12,6 +13,18 @@ import java.util.Scanner;
 import org.junit.jupiter.api.Test;
 
 public class ProgramControllerTest {
+    @Test
+    public void testCreateMoment() {
+        String simulatedInput = "My birthday\n" + "15/01/2023\n" + "I am happy.\n" + "1\n";
+        Scanner scanner = new Scanner(new ByteArrayInputStream(simulatedInput.getBytes()));
+        ProgramController controller = new ProgramController();
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PrintStream originalOut = System.out;
+        System.setOut(new PrintStream(outputStream));
+        controller.createMoment(scanner);
+        assertEquals(1, controller.getMoments().size());
+        System.setOut(originalOut);
+    }
    @Test
     public void testSortByMonth() {
         ProgramController controller = new ProgramController();
@@ -61,7 +74,7 @@ public class ProgramControllerTest {
 
         String output = outputStream.toString();
 
-        assertTrue(output.contains("Lista de momentos por emoció: Alegría"));
+        assertTrue(output.contains("Lista de momentos por emoción: Alegría"));
         assertTrue(output.contains("Graduation"));
         assertTrue(output.contains("Vacation"));
         assertFalse(output.contains("Breakup"));
