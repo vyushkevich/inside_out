@@ -85,7 +85,6 @@ public class ProgramControllerTest {
     }
 
     @Test
-<<<<<<< HEAD
     public void testDeleteMoment() {
         ProgramController controller = new ProgramController();
         controller.getMoments().add(new Moment("Vacation", LocalDate.of(2023, 1, 15), "Great time!", controller.getEmotions().get(0)));
@@ -105,7 +104,8 @@ public class ProgramControllerTest {
         assertEquals(3, controller.getMoments().size());
         System.setOut(originalOut);
     }
-=======
+    
+    @Test
     void testShowAllMoments() {
         ProgramController controller = new ProgramController();
     
@@ -136,5 +136,4 @@ public class ProgramControllerTest {
         
     }
 
->>>>>>> ed0bf1b (create testShowAllMoments)
 }
