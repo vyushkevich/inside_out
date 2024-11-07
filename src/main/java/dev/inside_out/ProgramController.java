@@ -47,6 +47,7 @@ public class ProgramController {
                     break;
             }
         }
+        scanner.close();
     }
 
     public void createMoment(Scanner scanner) {
