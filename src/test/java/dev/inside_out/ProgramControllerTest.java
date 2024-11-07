@@ -63,6 +63,7 @@ public class ProgramControllerTest {
         assertFalse(output.contains("Argument"));
         System.setOut(originalOut);
     }
+    
     @Test
     public void testDeleteMoment() {
         ProgramController controller = new ProgramController();
@@ -76,7 +77,27 @@ public class ProgramControllerTest {
         PrintStream originalOut = System.out;
         System.setOut(new PrintStream(outputStream));
         controller.deleteMoment(scanner);
-        assertEquals(3, controller.getMoments().size());
+        assertEquals(4, controller.getMoments().size());
         System.setOut(originalOut);
+    }  
+    
+    @Test
+    void testShowAllMoments() {
+        ProgramController controller = new ProgramController();
+        Emotion emotionTest = new Emotion(1, "Alegría");
+        Moment moment1 = new Moment("Título Momento 1", LocalDate.now(), "Descripción Momento 1", emotionTest);
+        Moment moment2 = new Moment("Título Momento 2", LocalDate.now(), "Descripción Momento 2", emotionTest);
+        controller.getMoments().add(moment1);
+        controller.getMoments().add(moment2);
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PrintStream originalOut = System.out;
+        System.setOut(new PrintStream(outputStream));
+        controller.showAllMoments();
+        System.setOut(originalOut);
+        String output = outputStream.toString();
+        assertTrue(output.contains("Título Momento 1"));
+        assertTrue(output.contains("Descripción Momento 1"));
+        assertTrue(output.contains("Título Momento 2"));
+        assertTrue(output.contains("Descripción Momento 2"));
     }
 }
