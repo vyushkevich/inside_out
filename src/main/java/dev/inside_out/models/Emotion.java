@@ -1,4 +1,4 @@
-package dev.inside_out;
+package dev.inside_out.models;
 import java.util.ArrayList;
 import java.util.List;
 

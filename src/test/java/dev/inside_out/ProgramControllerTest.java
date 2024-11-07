@@ -9,6 +9,10 @@ import java.io.InputStream;
 import java.time.LocalDate;
 import java.util.Scanner;
 import org.junit.jupiter.api.Test;
+
+import dev.inside_out.controler.ProgramController;
+import dev.inside_out.models.Emotion;
+import dev.inside_out.models.Moment;
 public class ProgramControllerTest {
 
     @Test
