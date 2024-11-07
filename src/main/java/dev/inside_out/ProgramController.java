@@ -43,7 +43,7 @@ public class ProgramController {
                     programRuning = false;
                     break;
                 default:
-                    System.out.println("No es la elección correcta!");
+                    System.out.println("No es una opción correcta!");
                     break;
             }
         }
@@ -103,7 +103,7 @@ public class ProgramController {
                 sortByMonth(scanner);
                 break;
             default:
-                System.out.println("No es la elección correcta!");
+                System.out.println("No es una opción correcta!");
                 break; 
         }
 
@@ -125,7 +125,7 @@ public class ProgramController {
     }
 
     public void sortByEmotion(Scanner scanner) {
-        System.out.println("Ingrese la emotion (1-10): ");
+        System.out.println("Ingrese la emoción (1-10): ");
         int emotionId = scanner.nextInt();
         scanner.nextLine();
 
@@ -134,9 +134,9 @@ public class ProgramController {
         .toList();
 
         if (sortedMoments.isEmpty()){
-            System.out.println("No se encontraron momentos para.");
+            System.out.println("No se encontraron momentos para:");
         } else {
-            System.out.println("Lista de momentos por emoció: " + emotions.get(emotionId-1).getNameOfEmotion());
+            System.out.println("Lista de momentos por emoción: " + emotions.get(emotionId-1).getNameOfEmotion());
             sortedMoments.forEach(System.out::println);
         }
        
