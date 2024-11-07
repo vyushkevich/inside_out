@@ -1,5 +1,6 @@
 package dev.inside_out;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -84,6 +85,7 @@ public class ProgramControllerTest {
     }
 
     @Test
+<<<<<<< HEAD
     public void testDeleteMoment() {
         ProgramController controller = new ProgramController();
         controller.getMoments().add(new Moment("Vacation", LocalDate.of(2023, 1, 15), "Great time!", controller.getEmotions().get(0)));
@@ -103,4 +105,36 @@ public class ProgramControllerTest {
         assertEquals(3, controller.getMoments().size());
         System.setOut(originalOut);
     }
+=======
+    void testShowAllMoments() {
+        ProgramController controller = new ProgramController();
+    
+    
+    Emotion emotionTest = new Emotion(1, "Alegría");  
+    Moment moment1 = new Moment("Título Momento 1", LocalDate.now(), "Descripción Momento 1", emotionTest);
+    Moment moment2 = new Moment("Título Momento 2", LocalDate.now(), "Descripción Momento 2", emotionTest);
+    
+    
+    controller.getMoments().add(moment1);
+    controller.getMoments().add(moment2);
+
+    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+    PrintStream originalOut = System.out;
+    System.setOut(new PrintStream(outputStream));
+
+    
+    controller.showAllMoments();
+
+    System.setOut(originalOut);
+    String output = outputStream.toString();
+
+    assertTrue(output.contains("Título Momento 1"));
+    assertTrue(output.contains("Descripción Momento 1"));
+    assertTrue(output.contains("Título Momento 2"));
+    assertTrue(output.contains("Descripción Momento 2"));
+       
+        
+    }
+
+>>>>>>> ed0bf1b (create testShowAllMoments)
 }
