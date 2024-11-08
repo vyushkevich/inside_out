@@ -39,7 +39,7 @@ How It Works
 
 Coverage Tests
 
-![Test Coverage Screenshot](./images/diagram.png)
+![Test Coverage Screenshot](images/inside_out.png)
 
 
 License
