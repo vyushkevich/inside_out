@@ -37,8 +37,20 @@ How It Works
     * By Emotion: Allows filtering by a specific emotion.
     * By Date (Month): Filters moments by the selected month.
 
+Installation
+
+1. Download or clone this repository: git clone https://github.com/NepyAnna/inside_out
+2. Open the project in your code editor (e.g., VS Code).
+
+Coverage Tests
+
+![Test Coverage Screenshot](images/inside_out.png)
+
+Diagram
+
+![Diagram](images/diagram.png)
 
 
-License
+AutThe authors
 
-This project is open-source and available under the MIT License.
+Yuliana-Alcala, Andreina2,  NepyAnna , Volodymyr Yushkevich
