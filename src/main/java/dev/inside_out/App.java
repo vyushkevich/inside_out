@@ -1,17 +1,13 @@
 package dev.inside_out;
 
-/**
- * Hello world!
- */
+import dev.inside_out.controler.ProgramController;
+
 public final class App {
     private App() {
     }
 
-    /**
-     * Says hello to the world.
-     * @param args The arguments of the program.
-     */
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
+        ProgramController controller = new ProgramController();        
+        controller.startProgram(); 
+    }  
 }
