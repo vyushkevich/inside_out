@@ -37,6 +37,9 @@ How It Works
     * By Emotion: Allows filtering by a specific emotion.
     * By Date (Month): Filters moments by the selected month.
 
+Coverage Tests
+
+![Test Coverage Screenshot](images/inside_out.png)
 
 
 License
