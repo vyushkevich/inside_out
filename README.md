@@ -51,6 +51,6 @@ Diagram
 ![Diagram](images/diagram.png)
 
 
-AutThe authors
+Authors
 
 Yuliana-Alcala, Andreina2,  NepyAnna , Volodymyr Yushkevich
