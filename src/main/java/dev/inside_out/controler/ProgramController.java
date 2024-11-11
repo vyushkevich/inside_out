@@ -76,7 +76,6 @@ public class ProgramController {
         Emotion emotion = emotions.get(choice - 1);
         Moment moment = new Moment(title, date, description, emotion);
         moments.add(moment);
-        System.out.print(moment);
         System.out.print("Momento añadido correctamente \n");
 
     }
