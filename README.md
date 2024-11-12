@@ -39,7 +39,7 @@ How It Works
 
 Installation
 
-1. Download or clone this repository: git clone https://github.com/NepyAnna/inside_out
+1. Download or clone this repository: git clone https://github.com/vyushkevich/inside_out
 2. Open the project in your code editor (e.g., VS Code).
 
 Coverage Tests
